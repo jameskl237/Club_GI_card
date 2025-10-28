@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte d'adhérent - Format Standard</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Conteneur principal de la carte - FORMAT STANDARD */
+        .carte-adherent {
+            width: 338px;   /* 85.6mm en 100 DPI */
+            height: 213px;  /* 53.98mm en 100 DPI */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+        }
+        
+        /* En-tête de la carte avec le dégradé bleu */
+        .en-tete {
+            background: linear-gradient(to right, #00266d, #c7d8f8);
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .titre-carte {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        /* Section principale avec les informations */
+        .contenu {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+        }
+        
+        /* Photo de profil */
+        .photo-profil {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(120deg, #f8f7f5, #ff6c23);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 11px;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .photo-profil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Informations personnelles */
+        .informations {
+            flex: 1;
+        }
+        
+        .nom {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #1e3c72;
+        }
+        
+        .details {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .details i {
+            margin-right: 5px;
+            color: #ff7b00;
+        }
+        
+        /* Pied de page avec les logos */
+        .pied-de-page {
+            background-color: #f8f9fa;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .logo {
+            height: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 100%;
+            max-width: 80px;
+        }
+        
+        /* Style pour le numéro d'adhérent */
+        .numero-adherent {
+            font-size: 11px;
+            color: #ff7b00;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+        
+        /* Style pour la date d'expiration */
+        .date-expiration {
+            font-size: 10px;
+            color: #888;
+            margin-top: 8px;
+            padding-top: 5px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        
+        
+        /* Style pour l'impression */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .carte-adherent {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+        
+        .conteneur-principal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteneur-principal">
+        <div class="carte-adherent">
+            <!-- Élément décoratif -->
+            <div class="element-decoratif"></div>
+            
+            <!-- En-tête de la carte -->
+            <div class="en-tete">
+                <div class="titre-carte">CARTE D'ADHÉRENT</div>
+                <div class="numero-adherent">N° 2025-0000</div>
+            </div>
+            
+            <!-- Contenu principal -->
+            <div class="contenu">
+                <div class="photo-profil">
+                    <img src="png-transparent-laptop-computer-icons-encapsulated-postscript-man-working-desk-electronics-rectangle-computer-removebg-preview.png" alt="" onerror="this.onerror=null;this.src='default-avatar.png';">
+                </div>
+                
+                <div class="informations">
+                    <div class="nom">James DJ</div>
+                    <div class="details">
+                        <i>Membre depuis:</i> Octobre 2025
+                    </div>
+                    <div class="details">
+                        <i>Statut:</i> Adjoint
+                    </div>
+                    <div class="details">
+                        <i>Cellule:</i> Projet
+                    </div>
+                    <div class="date-expiration">Valide jusqu'au: 31/12/2026</div>
+                </div>
+            </div>
+            
+            <!-- Pied de page avec les logos -->
+            <div class="pied-de-page">
+                <!-- Logo du club (remplacez le chemin par votre fichier réel) -->
+                <div class="logo">
+                    <img src="./LOGO-POLYTECHNIQUE-01-removebg-preview.png" alt="Logo Polytechnique" style="height:100%; max-width:120px; object-fit:contain;">
+                </div>
+
+                <!-- Logo de la polytechnique (remplacez le chemin par votre fichier réel) -->
+                <div class="logo" style="justify-content:flex-end;">
+                    <img src="logo_club_GI.png" alt="Logo du club" style="height:70px; max-width:300px; object-fit:contain;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
